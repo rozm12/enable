@@ -1,18 +1,8 @@
---[[
-Hats u need for spache ship!
-
-https://web.roblox.com/catalog/1103003368/Orange-Beanie-with-Black-Hair
-https://web.roblox.com/catalog/102611803/Verified-Bonafide-Plaidafied
-https://web.roblox.com/catalog/451220849/Lavender-Updo
-https://web.roblox.com/catalog/63690008/Pal-Hair
-https://web.roblox.com/catalog/2309346267/Classic-PC-Hat
-https://web.roblox.com/catalog/62724852/Chestnut-Bun
-https://web.roblox.com/catalog/48474313/Red-Roblox-Cap
-https://web.roblox.com/catalog/48474294/ROBLOX-Girl-Hair
-https://web.roblox.com/catalog/5063565603/Program-Head
-Price of all things is 50 robux so its not expensive.
-Made by Paplioh#0001 yes I made this alone.
-]]--
+for i = 1, 10 do
+       game.Players.LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+       game.Players.LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+--any physics manipulation, teleporting, adding rocket propulsion, etc
+end
 
 for i,v in pairs(game:GetService("Players").LocalPlayer.Character:GetChildren()) do
 if v:IsA("Accessory") then
