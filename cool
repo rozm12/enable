@@ -1,0 +1,237 @@
+--[[
+Hats u need for spache ship!
+
+https://web.roblox.com/catalog/1103003368/Orange-Beanie-with-Black-Hair
+https://web.roblox.com/catalog/102611803/Verified-Bonafide-Plaidafied
+https://web.roblox.com/catalog/451220849/Lavender-Updo
+https://web.roblox.com/catalog/63690008/Pal-Hair
+https://web.roblox.com/catalog/2309346267/Classic-PC-Hat
+https://web.roblox.com/catalog/62724852/Chestnut-Bun
+https://web.roblox.com/catalog/48474313/Red-Roblox-Cap
+https://web.roblox.com/catalog/48474294/ROBLOX-Girl-Hair
+https://web.roblox.com/catalog/5063565603/Program-Head
+Price of all things is 50 robux so its not expensive.
+Made by Paplioh#0001 yes I made this alone.
+]]--
+
+for i,v in pairs(game:GetService("Players").LocalPlayer.Character:GetChildren()) do
+if v:IsA("Accessory") then
+print(v)
+end
+end
+    
+    for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if v:IsA("Accessory") and v.Handle:FindFirstChild("SpecialMesh") then
+    ag = v.Handle:FindFirstChild("SpecialMesh")
+    ag:Destroy()
+    end
+    end
+    
+    for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if v:IsA("Accessory") and v.Handle:FindFirstChild("Mesh") then
+    ag = v.Handle:FindFirstChild("Mesh")
+    ag:Destroy()
+    end
+    end
+
+    wait()
+    
+    for _,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+		if v:IsA("Accessory") then
+		    v.Handle.Transparency = 1
+            v.Handle.Parent = workspace
+			v.Parent = workspace
+		end
+    end
+
+    wait(0.1)
+    
+    game.Players.LocalPlayer.Character:BreakJoints()
+    
+    wait(7)
+    
+local unanchoredparts = {}
+local movers = {}
+ local tog = true
+ local move = false
+local Player = game:GetService("Players").LocalPlayer
+local Character = Player.Character
+local mov = {};
+local mov2 = {};
+
+local Head = "MeshPartAccessory" --press f9 and find the hat that looks like a heads name and put it here
+local x = -2   --Edit Position for head
+local y = 2.8   --Edit Position for head x2
+local z = 3 --Edit Position for head x3
+
+
+local Hats = {rightarm = Character:WaitForChild("LavanderHair"),
+             leftarm  = Character:WaitForChild("MeshPartAccessory"),
+             rightleg = Character:WaitForChild("Pal Hair"),
+             leftleg  = Character:WaitForChild("Pink Hair"),
+              torso1   = Character:WaitForChild("PlaidWrapHat"),
+             torso2   = Character:WaitForChild("RedBeanieWithHair"),
+		ssss = Character:WaitForChild("LUAhEAD"),
+	thisissosad = Character:WaitForChild("Robloxclassicred"),
+	thisissosad1 = Character:WaitForChild("Kate Hair")
+             
+}
+
+for i,v in next, Hats do
+v.Handle.AccessoryWeld:Remove()
+for _,mesh in next, v:GetDescendants() do
+if mesh:IsA("Mesh") or mesh:IsA("SpecialMesh") then
+mesh:Remove()
+end
+end
+end
+local Network = coroutine.create(function()
+while true do
+game:GetService("RunService").Heartbeat:Wait()
+settings().Physics.AllowSleep = false
+game:GetService("Players").LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)*math.huge
+game:GetService("Players").LocalPlayer.SimulationRadius = math.pow(math.huge,math.huge)*math.huge
+end
+end)
+coroutine.resume(Network)
+
+function ftp(str)
+    local pt = {};
+    if str ~= 'me' and str ~= 'random' then
+        for i, v in pairs(game.Players:GetPlayers()) do
+            if v.Name:lower():find(str:lower()) then
+                table.insert(pt, v);
+            end
+        end
+    elseif str == 'me' then
+        table.insert(pt, plr);
+	elseif str == 'random' then
+		table.insert(pt, game.Players:GetPlayers()[math.random(1, #game.Players:GetPlayers())]);
+    end
+    return pt;
+end
+
+Character.Head.Transparency = 0
+Character.Head.face:Remove()
+Character.Torso.Transparency = 0
+Character["Right Arm"].Transparency = 0
+Character["Left Arm"].Transparency = 0
+Character["Right Leg"].Transparency = 0
+Character["Left Leg"].Transparency = 0
+local function align(i,v)
+local att0 = Instance.new("Attachment", i)
+att0.Position = Vector3.new(0,0,0)
+local att1 = Instance.new("Attachment", v)
+att1.Position = Vector3.new(0,0,0)
+local AP = Instance.new("AlignPosition", i)
+AP.Attachment0 = att0
+AP.Attachment1 = att1
+AP.RigidityEnabled = false
+AP.ReactionForceEnabled = false
+AP.ApplyAtCenterOfMass = true
+AP.MaxForce = 9999999
+AP.MaxVelocity = math.huge
+AP.Responsiveness = 65
+local AO = Instance.new("AlignOrientation", i)
+AO.Attachment0 = att0
+AO.Attachment1 = att1
+AO.ReactionTorqueEnabled = true
+AO.PrimaryAxisOnly = false
+AO.MaxTorque = 9999999
+AO.MaxAngularVelocity = math.huge
+AO.Responsiveness = 50
+end
+align(Hats.torso1.Handle, Character["Torso"])
+align(Hats.torso2.Handle, Character["Torso"])
+align(Hats.rightarm.Handle, Character["Torso"])
+align(Hats.leftarm.Handle, Character["Torso"])
+align(Hats.rightleg.Handle, Character["Torso"])
+align(Hats.leftleg.Handle, Character["Torso"])
+align(Hats.ssss.Handle, Character["Torso"])
+align(Hats.thisissosad.Handle, Character["Torso"])
+align(Hats.thisissosad1.Handle, Character["Torso"])
+Hats.torso1.Handle.Attachment.Rotation = Vector3.new(0,0,0)-- random block
+Hats.torso2.Handle.Attachment.Rotation = Vector3.new(0,0,0) -- the long stick
+Hats.rightarm.Handle.Attachment.Rotation = Vector3.new(0,0,0) -- random
+Hats.leftarm.Handle.Attachment.Rotation = Vector3.new(0,0,0) -- random
+Hats.rightleg.Handle.Attachment.Rotation = Vector3.new(0,90,0) -- leg holder
+Hats.leftleg.Handle.Attachment.Rotation = Vector3.new(0,90,0) -- sword
+Hats.ssss.Handle.Attachment.Rotation = Vector3.new(0,0,0) -- sword
+Hats.thisissosad.Handle.Attachment.Rotation = Vector3.new(0,0,0) -- sword
+Hats.thisissosad1.Handle.Attachment.Rotation = Vector3.new(0,90,0) -- sword
+
+
+Character:WaitForChild("Torso"):FindFirstChild("Attachment").Name = "Attachment1"
+Character:WaitForChild("Torso"):FindFirstChild("Attachment").Name = "Attachment2"
+Character:WaitForChild("Torso"):FindFirstChild("Attachment").Name = "Attachment3"
+Character:WaitForChild("Torso"):FindFirstChild("Attachment").Name = "Attachment4"
+Character:WaitForChild("Torso"):FindFirstChild("Attachment").Name = "Attachment5"
+Character:WaitForChild("Torso"):FindFirstChild("Attachment").Name = "Attachment6"
+Character:WaitForChild("Torso"):FindFirstChild("Attachment").Name = "Attachment7"
+Character:WaitForChild("Torso"):FindFirstChild("Attachment").Name = "Attachment8"
+
+Character:WaitForChild("Torso").Attachment.Position = Vector3.new(1.4,0,-2) -- arm
+Character:WaitForChild("Torso").Attachment1.Position = Vector3.new(0,0,0) -- tilted part
+Character:WaitForChild("Torso").Attachment2.Position = Vector3.new(0,-0.6,-2) -- long hair
+Character:WaitForChild("Torso").Attachment3.Position = Vector3.new(0,-1.48,0) -- normal part
+Character:WaitForChild("Torso").Attachment4.Position = Vector3.new(0,-1,1.5) -- Big ass block
+Character:WaitForChild("Torso").Attachment5.Position = Vector3.new(0,-1.48,-1.5) -- idk
+Character:WaitForChild("Torso").Attachment6.Position = Vector3.new(-1.4,0,-2) -- arm
+Character:WaitForChild("Torso").Attachment7.Position = Vector3.new(0,1.5,1.5)
+Character:WaitForChild("Torso").Attachment8.Position = Vector3.new(0,0,-3)
+
+
+
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 4
+
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 40
+
+game.Players.LocalPlayer.Character.Animate.idle.Animation1.AnimationId = "rbxassetid://178130996"
+game.Players.LocalPlayer.Character.Animate.idle.Animation2.AnimationId = "rbxassetid://178130996"
+game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "rbxassetid://178130996"
+game.Players.LocalPlayer.Character.Animate.run.RunAnim.AnimationId = "rbxassetid://178130996"
+game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "rbxassetid://178130996"
+game.Players.LocalPlayer.Character.Animate.toolnone.ToolNoneAnim.AnimationId = "rbxassetid://178130996"
+    game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "rbxassetid://178130996"
+    game.Players.LocalPlayer.Character.Animate.sit.SitAnim.AnimationId = "rbxassetid://178130996"
+
+
+local NetworkAccess = coroutine.create(function()
+settings().Physics.AllowSleep = false
+while true do game:GetService("RunService").RenderStepped:Wait()
+for _,Players in next, game:GetService("Players"):GetChildren() do
+if Players ~= game:GetService("Players").LocalPlayer then
+Players.MaximumSimulationRadius = 0.1 Players.SimulationRadius = 0 end end
+game:GetService("Players").LocalPlayer.MaximumSimulationRadius = math.pow(math.huge,math.huge)
+game:GetService("Players").LocalPlayer.SimulationRadius = math.huge*math.huge end end)
+coroutine.resume(NetworkAccess)
+
+game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(KeyPressed)
+	 if KeyPressed == "y" then
+	    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 60
+        end
+	end)
+
+	game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(KeyPressed)
+	 if KeyPressed == "f" then
+	    game.Players.LocalPlayer.Character.Humanoid.HipHeight = game.Players.LocalPlayer.Character.Humanoid.HipHeight +1
+        end
+	end)
+
+	game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(KeyPressed)
+	 if KeyPressed == "g" then
+	    	    game.Players.LocalPlayer.Character.Humanoid.HipHeight = game.Players.LocalPlayer.Character.Humanoid.HipHeight -1
+        end
+	end)
+
+	game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(KeyPressed)
+	 if KeyPressed == "v" then
+	    	    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = game.Players.LocalPlayer.Character.Humanoid.WalkSpeed -5
+        end
+	end)
+
+	game.Players.LocalPlayer:GetMouse().KeyDown:Connect(function(KeyPressed)
+	 if KeyPressed == "c" then
+	    	    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = game.Players.LocalPlayer.Character.Humanoid.WalkSpeed +5
+        end
+	end)
